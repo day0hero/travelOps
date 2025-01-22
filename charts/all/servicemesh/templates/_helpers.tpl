@@ -89,7 +89,7 @@ gateways:
       pod: {}
     service: {}
   openshiftRoute:
-    enabled: {{ .Values.gateways.openshiftRoute.enabled }}
+    enabled: {{ default "false" .Values.gateways.openshiftRoute.enabled }}
 {{- end }}
 
 {{- define "servicemesh.addons" }}
@@ -111,15 +111,9 @@ grafana:
         contextPath: /grafana
         tls:
           termination: {{ .Values.grafana.service.ingress.tls.termination }} 
-jaeger:
-  name: jaeger-{{ .Values.global.jaeger.strategy }}
-  install:
-    ingress:
-      enabled: true
-    storage:
-      type: {{ .Values.jaeger.storage }}
 kiali:
   enabled: true
+  name: kiali
 prometheus:
   enabled: true
 {{- end }}

@@ -7,10 +7,10 @@ spec:
     dataPlane:
       automtls: {{ default true .Values.security.dataPlane.automtls }}
       mtls: {{ default true .Values.security.dataPlane.mtls }}
-{{- with $trace := .Values.jaeger.tracing }}
+{{- with $trace := .Values.smcp.tracing }}
   tracing:
     sampling: {{ default 10000 $trace.sampling }}
-    type: {{ default "Jaeger" $trace.type }}
+    type: {{ default "None" $trace.type }}
 {{- end }}
   general:
     logging:
