@@ -9,7 +9,7 @@ clusterGroup:
     - openshift-operators-redhat:
         operatorGroup: true
         targetNamespaces:
-    - openshift-tempo-operators:
+    - openshift-tempo-operator:
         operatorGroup: true
         targetNamespaces:
     - istio-system
@@ -21,7 +21,7 @@ clusterGroup:
     acm:
       name: advanced-cluster-management
       namespace: open-cluster-management
-      channel: release-2.11
+      channel: release-2.12
 
 # kiali defaults to the candidate channel and gives us access to v2 resources
     kiali:
@@ -32,7 +32,7 @@ clusterGroup:
 # tempo replaces jaeger distributed tracing component in servicemesh 2.6
     tempo:
       name: tempo-product
-      namespace: openshift-tempo-product
+      namespace: openshift-tempo-operator
     
     servicemesh:
       name: servicemeshoperator
