@@ -23,16 +23,16 @@ clusterGroup:
       namespace: open-cluster-management
       channel: release-2.12
 
-# kiali defaults to the candidate channel and gives us access to v2 resources
     kiali:
       name: kiali-ossm
       namespace: openshift-operators
-      channel: candidate
+      channel: stable
 
 # tempo replaces jaeger distributed tracing component in servicemesh 2.6
     tempo:
       name: tempo-product
       namespace: openshift-tempo-operator
+      channel: stable
     
     servicemesh:
       name: servicemeshoperator
