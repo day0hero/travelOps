@@ -11,9 +11,6 @@ global:
 # Enable automatic sidecar injection
 sidecarAutoInjection: true
 
-# Enable jaeger sidecar
-sidecarJaeger: true
-
 # Add travelops namespaces to servicemesh:
 serviceMeshMemberNamespaces:
   - travel-portal

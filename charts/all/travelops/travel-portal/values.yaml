@@ -8,9 +8,6 @@ global:
   jaeger:
     strategy:  production
 
-# Enable auto sidecar injection
-sidecarAutoInjection: true
-
 # Enable jaeger sidecar
 sidecarJaeger: true
 

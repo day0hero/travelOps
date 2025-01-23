@@ -22,9 +22,6 @@ spec:
       {{- if $.Values.sidecarAutoInjection }}
         sidecar.istio.io/inject: "true"
       {{- end }}
-      {{- if $.Values.sidecarJaeger }}
-        sidecar.jaegertracing.io/inject: "jaeger-{{ $.Values.global.jaeger.strategy }}"
-      {{- end }}
       {{- include "travel-portal.istioProxyConfig" . | nindent 8 }}
       labels:
         app: {{ $apps.name }}
